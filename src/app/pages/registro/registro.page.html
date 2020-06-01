@@ -1,5 +1,6 @@
-<ion-app>
-    <ionic-content class="ion-margin">
+<ion-app class="contenido">
+  <ionic-content class="ion-margin">
+    <ion-list [scrollEvents]="true">
       <ion-toolbar class="ion-text-center">
         <ion-grid>
 
@@ -12,7 +13,7 @@
           <ion-row>
             <ion-col>
               <img src="../../../assets/img/logo-azul.png" alt="" class="img-header">
-              <h2>Nuevo registro</h2>
+              <h6>Continua con el registro</h6>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -98,24 +99,7 @@
           </ion-row>
         </ion-grid>
       </form>
-      <!-- <ion-tabs>
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="home">
-          <ion-label>Home</ion-label>
-          <ion-icon name="home"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="settings">
-          <ion-label>Settings</ion-label>
-          <ion-icon name="settings"></ion-icon>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs> -->
 
-      <!-- </ionic-content>
-    <ion-footer class="ion-no-border">
-    <ion-toolbar>
-      
-    </ion-toolbar>
-    </ion-footer>
-  
-</ion-app>-->
+    </ion-list>
+  </ionic-content>
+</ion-app>
