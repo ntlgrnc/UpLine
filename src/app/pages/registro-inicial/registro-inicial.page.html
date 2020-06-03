@@ -1,9 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>registro_inicial</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
 
-<ion-content>
+  <ion-content>
+    <ion-toolbar class="ion-text-center">
+      <ion-grid>
 
-</ion-content>
+        <ion-row>
+          <ion-col>
+            <img src="../../../assets/img/logo-upline-azul.png" class="img-header-logo">
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <img src="../../../assets/img/logo-azul.png" class="img-header">
+            <h6>Bienvenid@ a nuestra red social</h6>
+            <p>¡Empecemos con el nuevo registro!</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+
+    <form (ngSubmit)="formReg1()" action="" class="ion-margin">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item class="item">
+              <ion-label class="label" position="stacked">Correo electrónico</ion-label>
+              <ion-input [(ngModel)]="registro.correo" name="correo" class="input" required type="email"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-item class="item">
+              <ion-label class="label" position="stacked">Clave</ion-label>
+              <ion-input [(ngModel)]="registro.clave" name="clave" class="input" required type="password"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button class="boton btn-google" expand="block" fill="outline" color="tertiary" 
+            [routerLink]="['/']" routerLinkActive="router-link-active"><i class="fab fa-google icono">
+            </i> Continuar con Google</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button class="boton" type="submit" expand="block" color="tertiary" 
+            [routerLink]="['/fin-registro']" routerLinkActive="router-link-active">
+            Continuar
+          </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </form>
+  </ion-content>
+</ion-app>

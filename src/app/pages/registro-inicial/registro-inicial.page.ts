@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NavController, NavParams } from '@ionic/angular'
 
 @Component({
   selector: 'app-registro-inicial',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroInicialPage implements OnInit {
 
-  constructor() { }
+  registros: any;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private http: HttpClient) { }
+
+  ionViewDidLoad(){
+    console.log('ionViewDidLoad RegistroInicialPage');
+    this.getregistrosInicial();
+  }
 
   ngOnInit() {
+  }
+
+  registro = {}
+
+  apiUrl = "http://localhost/procesos-Upline/";
+
+  // formReg1(){
+  //   this.http.post(this.apiUrl, JSON.stringify(this.registro)).subscribe(data=>{
+  //     console.log(data);
+  //   })
+  // }
+
+  getregistrosInicial(){
+    let funcion = "getRegistroInicial";
+    this.http.post(this.apiUrl, JSON.stringify(funcion)).subscribe(
+      res=>{
+        console.log(res);
+      }
+    );
   }
 
 }
