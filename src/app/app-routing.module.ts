@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'inicio-registro',
     loadChildren: () => import('./pages/registro-inicial/registro-inicial.module').then( m => m.RegistroInicialPageModule)
   },
+  {
+    path: 'perfil-usuario',
+    loadChildren: () => import('./pages/perfil-d/perfil-d.module').then( m => m.PerfilDPageModule)
+  },
 ];
 
 @NgModule({

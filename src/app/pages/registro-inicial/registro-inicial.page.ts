@@ -12,14 +12,12 @@ export class RegistroInicialPage implements OnInit {
   registros: any;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
     private http: HttpClient) { }
 
-  ionViewDidLoad(){
-    console.log('ionViewDidLoad RegistroInicialPage');
-    this.getregistrosInicial();
-  }
+  // ionViewDidLoad(){
+  //   console.log('ionViewDidLoad RegistroInicialPage');
+  //   this.getregistrosInicial();
+  // }
 
   ngOnInit() {
   }
@@ -34,13 +32,13 @@ export class RegistroInicialPage implements OnInit {
   //   })
   // }
 
-  getregistrosInicial(){
-    let funcion = "getRegistroInicial";
-    this.http.post(this.apiUrl, JSON.stringify(funcion)).subscribe(
-      res=>{
-        console.log(res);
-      }
-    );
-  }
+  // getregistrosInicial(){
+  //   let funcion = "getRegistroInicial";
+  //   this.http.post(this.apiUrl, JSON.stringify(funcion)).subscribe(
+  //     res=>{
+  //       console.log(res);
+  //     }
+  //   );
+  // }
 
 }
