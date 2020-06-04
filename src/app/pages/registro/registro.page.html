@@ -1,110 +1,108 @@
 <ion-app class="contenido">
   <ionic-content class="ion-margin">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="inicio-registro"
-          [text]="buttonText"
-          [icon]="buttonIcon">
+      <ion-back-button defaultHref="inicio-registro" [text]="buttonText" [icon]="buttonIcon">
       </ion-back-button>
     </ion-buttons>
-      <ion-toolbar class="ion-text-center">
+    <ion-toolbar class="ion-text-center">
 
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <img src="../../../assets/img/logo-upline-color.png" alt="" class="img-header-logo">
-            </ion-col>
-          </ion-row>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="../../../assets/img/logo-upline-color.png" alt="" class="img-header-logo">
+          </ion-col>
+        </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <img src="../../../assets/img/logo-azul.png" alt="" class="img-header">
-              <h6>Continua con el registro</h6>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="../../../assets/img/logo-azul.png" alt="" class="img-header">
+            <h6>Continua con el registro</h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-      </ion-toolbar>
+    </ion-toolbar>
 
-      <form action="" class="formulario">
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label class="label" position="stacked">Nombres</ion-label>
-                <ion-input class="input" required type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+    <form action="" class="formulario">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="stacked">Nombres</ion-label>
+              <ion-input class="input" required type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label class="label" position="stacked">Apellidos</ion-label>
-                <ion-input class="input" required type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="stacked">Apellidos</ion-label>
+              <ion-input class="input" required type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label class="label" position="stacked">Usuario</ion-label>
-                <ion-input class="input" required type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="stacked">Usuario</ion-label>
+              <ion-input class="input" required type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label class="label" position="stacked">Fecha de nacimiento</ion-label>
-                <ion-datetime class="datetime" displayFormat="MMM DD YYYY" max="2020" value="May 26 2020"
-                  [monthShortNames]="meses"></ion-datetime>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label class="label" position="stacked">Fecha de nacimiento</ion-label>
+              <ion-datetime class="datetime" displayFormat="MMM DD YYYY" max="2020" value="May 26 2020"
+                [monthShortNames]="meses"></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
 
-          <ion-row>
-            <ion-list>
-              <ion-radio-group name="sexo">
-                <ion-list-header>
-                  <ion-label class="label" position="stacked">Sexo</ion-label>
-                </ion-list-header>
-                <ion-row>
-                  <ion-item class="sin-borde">
-                    <ion-label class="input">Femenino</ion-label>
-                    <ion-radio slot="start" value="Femenino"></ion-radio>
-                  </ion-item>
+        <ion-row>
+          <ion-list>
+            <ion-radio-group name="sexo">
+              <ion-list-header>
+                <ion-label class="label" position="stacked">Sexo</ion-label>
+              </ion-list-header>
+              <ion-row>
+                <ion-item class="sin-borde">
+                  <ion-label class="input">Femenino</ion-label>
+                  <ion-radio slot="start" value="Femenino"></ion-radio>
+                </ion-item>
 
-                  <ion-item class="sin-borde">
-                    <ion-label class="input">Masculino</ion-label>
-                    <ion-radio slot="start" value="Masculino"></ion-radio>
-                  </ion-item>
-                </ion-row>
-              </ion-radio-group>
-            </ion-list>
-          </ion-row>
+                <ion-item class="sin-borde">
+                  <ion-label class="input">Masculino</ion-label>
+                  <ion-radio slot="start" value="Masculino"></ion-radio>
+                </ion-item>
+              </ion-row>
+            </ion-radio-group>
+          </ion-list>
+        </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <ion-item class="sin-borde">
-                <ion-checkbox color="tertiary" slot="start"></ion-checkbox>
-                <ion-text class="label-terminos">
-                  Al hacer click aceptas que estás de acuerdo con los términos de
-                  política y privacidad de Upline.
-                </ion-text>
-              </ion-item>
-            </ion-col>
-          </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item class="sin-borde">
+              <ion-checkbox color="tertiary" slot="start"></ion-checkbox>
+              <ion-text class="label-terminos">
+                Al hacer click aceptas que estás de acuerdo con los términos de
+                política y privacidad de Upline.
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-          <ion-row>
-            <ion-col>
-              <ion-button class="boton" expand="block" color="tertiary">Finalizar registro</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </form>
+        <ion-row>
+          <ion-col>
+            <ion-button class="boton" expand="block" color="tertiary">Finalizar registro</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
 
   </ionic-content>
 </ion-app>

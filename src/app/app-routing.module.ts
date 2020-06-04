@@ -16,7 +16,15 @@ const routes: Routes = [
   {
     path: 'inicio-registro',
     loadChildren: () => import('./pages/registro-inicial/registro-inicial.module').then( m => m.RegistroInicialPageModule)
+  },  {
+    path: 'publicaciones',
+    loadChildren: () => import('./pages/publicaciones/publicaciones.module').then( m => m.PublicacionesPageModule)
   },
+  {
+    path: 'tab',
+    loadChildren: () => import('./pages/tab/tab.module').then( m => m.TabPageModule)
+  },
+
 ];
 
 @NgModule({
