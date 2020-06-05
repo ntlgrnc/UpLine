@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'publicaciones',
         loadChildren: '../publicaciones/publicaciones.module#PublicacionesPageModule'
+      },
+      {
+        path: 'perfil-usuario',
+        loadChildren: '../perfil-d/perfil-d.module#PerfilDPageModule'
       }
     ]
   }
