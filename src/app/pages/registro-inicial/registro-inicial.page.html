@@ -20,14 +20,14 @@
       </ion-grid>
     </ion-toolbar>
 
-    <form (ngSubmit)="formReg1()" action="" class="ion-margin">
+    <form action="" class="ion-margin">
 
       <ion-grid>
         <ion-row>
           <ion-col>
             <ion-item class="item">
               <ion-label class="label" position="stacked">Correo electrónico</ion-label>
-              <ion-input [(ngModel)]="registro.correo" name="correo" class="input" required type="email"></ion-input>
+              <ion-input name="correo" class="input" required type="email"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -36,7 +36,7 @@
           <ion-col>
             <ion-item class="item">
               <ion-label class="label" position="stacked">Clave</ion-label>
-              <ion-input [(ngModel)]="registro.clave" name="clave" class="input" required type="password"></ion-input>
+              <ion-input name="clave" class="input" required type="password"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>

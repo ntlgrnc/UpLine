@@ -1,11 +1,130 @@
-<!-- <ion-header class="ion-no-border"> -->
-  <ion-header>
-  <ion-toolbar>
-    <ion-title class="usuario">natalia-g</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-menu side="end" content-id="main-content">
+    <ion-header class="ion-no-border">
+      <ion-toolbar translucent>
+        <h3 class="titulo-menu">Configuraciones</h3>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="mail-outline" slot="start" style="color: #512DA8;"></ion-icon>
+          <ion-label class="menu-item">Mensajes</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="key-outline" slot="start" style="color: #512DA8;"></ion-icon>
+          <ion-label class="menu-item">Privacidad</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person-outline" slot="start" style="color: #512DA8;"></ion-icon>
+          <ion-label class="menu-item">Cuenta</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="create-outline" slot="start" style="color: #512DA8;"></ion-icon>
+          <ion-label class="menu-item">Editar perfil</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="help-outline" slot="start" style="color: #512DA8;"></ion-icon>
+          <ion-label class="menu-item">Ayuda</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-<ion-content>
+  <ion-content class="ion-page" id="main-content">
+    <ion-header class="ion-no-border">
+      <ion-toolbar class="header">
+        <ion-title class="usuario">@nataliag</ion-title>
+        <span class="tipo-us">Desarrollador</span>
+        <ion-buttons slot="end">
+          <ion-menu-button>
+            <ion-icon name="settings-outline" style="color: #512DA8;"></ion-icon>
+          </ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 
-</ion-content>
- 
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/img/natalia.jpg" class="foto-perfil">
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin">
+        <ion-col size="4">
+          <p class="menu-info">Publicaciones</p>
+          <span class="menu-num">5</span>
+        </ion-col>
+        <ion-col size="4">
+          <p class="menu-info">Seguidores</p>
+          <span class="menu-num">127</span>
+        </ion-col>
+        <ion-col size="4">
+          <p class="menu-info">Seguidos</p>
+          <span class="menu-num">177</span>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-horizontal">
+        <ion-col class="nombre">Natalia Garnica G</ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-horizontal">
+        <ion-col>
+          <p class="descripcion-bio">
+            Desarrolladora Front-End
+            <br>
+            Conocimiento de Python, Angular y PHP
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div class="menu-bio">
+          <ion-col>
+            <ion-icon style="font-size: 26px;" class="icono" name="albums-outline"></ion-icon>
+            <ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon>
+          </ion-col>
+        </div>
+      </ion-row>
+    </ion-grid>
+
+    <ion-content>
+      
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-content>
+
+
+</ion-app>
