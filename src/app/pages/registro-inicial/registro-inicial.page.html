@@ -58,6 +58,14 @@
           </ion-col>
         </ion-row>
 
+
+        <ion-row *ngFor="let usuario of usuarios">
+          <ion-col>
+            <p>correo: {{ usuario.correo }}</p>
+            <p>clave: {{ usuario.clave }}</p>
+          </ion-col>
+        </ion-row>
+
       </ion-grid>
     </form>
   </ion-content>

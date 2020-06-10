@@ -2,6 +2,10 @@
     padding: 10px;
 }
 
+.contenedor {
+    margin-top: 20%;
+}
+
 .usuario {
     font-family: 'Gotu', sans-serif;
     font-weight: bold;
@@ -39,6 +43,9 @@
     color: #512DA8;
     border-bottom: 2px solid #512DA8;
     border-top: 2px solid #512DA8;
+    a {
+        color: #512DA8;
+    }
 }
 
 .icono {
@@ -50,7 +57,9 @@
     font-weight: bold;
     font-size: 12px;
     color: #512DA8;
-    margin-left: 12%;
+    margin-left: 11%;
+    position: relative;
+    bottom: 5px;
 }
 
 .foto-perfil {
@@ -70,4 +79,23 @@
     position: relative;
     bottom: 10px;
     left: 30%;
+}
+
+.img-publi {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.usuario-publi {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    position: relative;
+    bottom: 10px;
+}
+
+.fecha-publi {
+    font-size: 12px;
+    color: #7F8C8D;
+    position: relative;
+    bottom: 20px;
 }

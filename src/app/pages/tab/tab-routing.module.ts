@@ -14,11 +14,11 @@ const routes: Routes = [
     children: [
       {
         path: 'publicaciones',
-        loadChildren: '../publicaciones/publicaciones.module#PublicacionesPageModule'
+        loadChildren: './../publicaciones/publicaciones.module#PublicacionesPageModule'
       },
       {
         path: 'perfil-usuario',
-        loadChildren: '../perfil-d/perfil-d.module#PerfilDPageModule'
+        loadChildren: './../perfil-d/perfil-d.module#PerfilDPageModule'
       }
     ]
   }

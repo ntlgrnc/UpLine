@@ -32,7 +32,7 @@
   </ion-menu>
 
   <ion-content class="ion-page" id="main-content">
-    <ion-header class="ion-no-border">
+    <ion-header class="ion-no-border" slot="fixed">
       <ion-toolbar class="header">
         <ion-title class="usuario">@nataliag</ion-title>
         <span class="tipo-us">Desarrollador</span>
@@ -44,7 +44,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-grid>
+    <ion-grid class="contenedor">
       <ion-row>
         <ion-col>
           <img src="../../../assets/img/natalia.jpg" class="foto-perfil">
@@ -79,8 +79,8 @@
       <ion-row>
         <div class="menu-bio">
           <ion-col>
-            <ion-icon style="font-size: 26px;" class="icono" name="albums-outline"></ion-icon>
-            <ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon>
+            <a><ion-icon style="font-size: 26px;" class="icono" name="albums-outline"></ion-icon></a>
+            <a><ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon></a>
           </ion-col>
         </div>
       </ion-row>
@@ -90,7 +90,19 @@
       
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-title>
+            <ion-grid fixed class="ion-no-padding">
+              <ion-row>
+                <ion-col size="2">
+                  <img src="../../../assets/img/natalia.jpg" class="img-publi">
+                </ion-col>
+                <ion-col size="10">
+                  <p class="usuario-publi">@nataliag</p>
+                  <p class="fecha-publi">Hace 2 horas</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-title>
           <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
         </ion-card-header>
       
