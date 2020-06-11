@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
   providers: [
     StatusBar,
     SplashScreen,
+    UsuarioService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
