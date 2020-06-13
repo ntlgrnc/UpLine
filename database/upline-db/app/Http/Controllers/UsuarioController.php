@@ -37,9 +37,13 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $usuario = new Usuario();
-        $usuario->correo = $request->input('correo');
-        $usuario->clave = $request->input('clave');
-        $usuario->estado = $request->input('estado');
+        $usuario->idUsuario = 0;
+        $usuario->correo = $request['correo'];
+        $usuario->clave = $request['clave'];
+        $usuario->estado = "A";
+
+        $usuario->save();
+
     }
 
     /**
