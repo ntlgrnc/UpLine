@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/app/models/usuario-model';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-registro-inicial',
@@ -13,34 +14,41 @@ export class RegistroInicialPage implements OnInit {
   usuarios: Usuario[];
 
   usuario: Usuario = {
-    correo: '',
-    clave: '',
-    estado: ''
+    idUsuario: 0,
+    correo: "",
+    clave: ""
   }
+  registro: boolean;
 
   constructor(private usuarioService: UsuarioService, private http:HttpClient) {
 
-    /**
-    this.usuarioService.getUsuario().subscribe((data: Usuario[])=>{
-      this.usuarios = data;
-    }, (error)=>{
-      console.log(error);
-      alert('error');
-    }); */
+    
+    // this.usuarioService.getUsuario().subscribe((data: Usuario[])=>{
+    //   this.usuarios = data;
+    // }, (error)=>{
+    //   console.log(error);
+    //   alert('error');
+    // }); 
     
    }
 
   ngOnInit() { 
   }
 
-  guardarUsuario() {
-    this.usuarioService.guardarUs(this.usuario).subscribe((data) => {
+  guardarUsuario(user) {
+
+    console.log(user.value);
+
+    this.usuarioService.guardarUs(user.value).subscribe(data => {
       alert('se registro');
       console.log(data);
+      this.registro = true;
     }, (error)=>{
       console.log(error);
       alert('No se pudo guardar');
+      this.registro = false;
     });
-  }
+
+ }
 
 }
