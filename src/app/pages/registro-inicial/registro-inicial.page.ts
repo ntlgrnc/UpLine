@@ -34,7 +34,7 @@ export class RegistroInicialPage implements OnInit {
   }
 
   guardarUsuario() {
-    this.usuarioService.guardarUs(this.usuario).suscribe((data) => {
+    this.usuarioService.guardarUs(this.usuario).subscribe((data) => {
       alert('se registro');
       console.log(data);
     }, (error)=>{
