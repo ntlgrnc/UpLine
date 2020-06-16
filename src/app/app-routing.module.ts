@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'recuperar-con',
     loadChildren: () => import('./pages/recuperar-con/recuperar-con.module').then( m => m.RecuperarConPageModule)
   },
+  {
+    path: 'nueva-clave',
+    loadChildren: () => import('./pages/nueva-clave/nueva-clave.module').then( m => m.NuevaClavePageModule)
+  },
 
 
 ];
