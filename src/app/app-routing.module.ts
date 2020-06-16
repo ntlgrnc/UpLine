@@ -6,7 +6,7 @@ const routes: Routes = [
   
   {
     path: '',
-    redirectTo: 'inicio-registro',
+    redirectTo: 'inicio-sesion',
     pathMatch: 'full'
   },
   {
@@ -29,6 +29,15 @@ const routes: Routes = [
     path: 'perfil-usuario',
     loadChildren: () => import('./pages/perfil-d/perfil-d.module').then( m => m.PerfilDPageModule)
   },
+  {
+    path: 'inicio-sesion',
+    loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+  },  {
+    path: 'recuperar-con',
+    loadChildren: () => import('./pages/recuperar-con/recuperar-con.module').then( m => m.RecuperarConPageModule)
+  },
+
+
 ];
 
 @NgModule({

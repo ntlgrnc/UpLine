@@ -1,0 +1,73 @@
+<ion-app>
+  <ion-content>
+    <form class="ion-margin">
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            <img src="../../../assets/img/logo-upline-azul.png" class="img-header-logo">
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <h6>Bienvenid@ a nuestra red social</h6>
+            <p>¡Inicia sesion para continuar!</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-card color="tertiary">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item class="item" color="tertiary">
+                <ion-label class="label" position="stacked">Correo electrónico</ion-label>
+                <ion-input name="correo" class="input" required type="email"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item class="item" color="tertiary">
+                <ion-label class="label" position="stacked">Clave</ion-label>
+                <ion-input name="clave" class="input" required type="password"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p class="recu" [routerLink]="['/recuperar-con']">Olvidaste tu contraseña?</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button class="boton" type="submit" expand="block" fill="outline" color="tertiary"
+              [routerLink]="['/publicaciones']" routerLinkActive="router-link-active">
+              Iniciar sesion
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button class="boton btn-google" expand="block" color="tertiary" [routerLink]="['/']"
+              routerLinkActive="router-link-active"><i class="fab fa-google icono">
+              </i> Iniciar sesion con Google</ion-button>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </form>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar class="ion-text-center">
+      <p>¿No tienes una cuenta?<span [routerLink]="['/inicio-registro']">Registrate.</span></p>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
