@@ -40,6 +40,14 @@ const routes: Routes = [
     path: 'nueva-clave',
     loadChildren: () => import('./pages/nueva-clave/nueva-clave.module').then( m => m.NuevaClavePageModule)
   },
+  {
+    path: 'chats',
+    loadChildren: () => import('./pages/chats/chats.module').then( m => m.ChatsPageModule)
+  },
+  {
+    path: 'notificaciones',
+    loadChildren: () => import('./pages/notificaciones/notificaciones.module').then( m => m.NotificacionesPageModule)
+  },
 
 
 ];
