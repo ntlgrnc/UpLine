@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Usuario;
 
 class UsuarioController extends Controller
@@ -44,6 +45,10 @@ class UsuarioController extends Controller
 
         $usuario->save();
 
+        $idUs = DB::table('usuario')->where('correo', $usuario->correo)->value('idUsuario');
+    
+        //\Session::push('idUsuario', $idUs);
+        return $idUs;
     }
 
     /**

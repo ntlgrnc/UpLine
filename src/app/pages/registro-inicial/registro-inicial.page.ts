@@ -35,13 +35,16 @@ export class RegistroInicialPage implements OnInit {
   ngOnInit() { 
   }
 
+  idUsuario = 0;
+
   guardarUsuario(user) {
 
     console.log(user.value);
 
     this.usuarioService.guardarUs(user.value).subscribe(data => {
       alert('se registro');
-      console.log(data);
+      this.idUsuario = data;
+      localStorage.setItem('idUsuario',String(this.idUsuario));
       this.registro = true;
     }, (error)=>{
       console.log(error);

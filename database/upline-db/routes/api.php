@@ -18,5 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Rutas para la tabla usuario
+
 Route::get('usuarios', 'UsuarioController@index');
 Route::post('registroini', 'UsuarioController@store');
+
+// Rutas para la tabla publicación
+
+Route::post('addpublicacion', 'PublicacionController@guardarPubli');

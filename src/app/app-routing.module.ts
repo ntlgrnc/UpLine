@@ -32,9 +32,14 @@ const routes: Routes = [
   {
     path: 'inicio-sesion',
     loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
-  },  {
+  },
+  {
     path: 'recuperar-con',
     loadChildren: () => import('./pages/recuperar-con/recuperar-con.module').then( m => m.RecuperarConPageModule)
+  },
+  {
+    path: 'add',
+    loadChildren: () => import('./pages/add-publicacion/add-publicacion.module').then( m => m.AddPublicacionPageModule)
   },
 
 

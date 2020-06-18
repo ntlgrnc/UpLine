@@ -12,7 +12,12 @@ export class RegistroPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var idUs = localStorage.getItem('idUsuario');
+    console.log(idUs);
   }
 
+  
+  
+  
 
 }

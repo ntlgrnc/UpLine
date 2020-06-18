@@ -1,0 +1,43 @@
+.titulo {
+    font-family: 'Poppins', sans-serif;
+    color: #512DA8;
+    font-weight: bold;
+}
+
+.img-publi {
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    left: 30%;
+}
+
+.usuario-publi {
+    position: relative;
+    bottom: 15%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contenido {
+    width: 90%;
+    margin: 5%;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.boton-a {
+    text-transform: capitalize;
+    font-family: 'Poppins',sans-serif;
+    font-weight: bold;
+    position: relative;
+    float: right;
+}
+
+.boton {
+    position: relative;
+    float: right;
+    margin-right: 5%;
+}
