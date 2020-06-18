@@ -1,9 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recuperar-con</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-app>
+  <ion-content color="tertiary">
+    <ion-card class="card">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-icon class="icon" name="lock-closed-outline"></ion-icon>
+            <p class="p">¿Tienes problemas para iniciar sesion?</p>
+            <p class="p2">Ingresa tu correo electrónico<br> y te enviaremos un enlace para recuperar<br> el acceso a tu
+              cuenta.</p>
+          </ion-col>
+        </ion-row>
+        <form>
+          <ion-row>
+            <ion-col>
+              <ion-item class="item">
+                <ion-label class="label" position="stacked">Correo electrónico</ion-label>
+                <ion-input name="correo" class="input" required type="email"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button class="boton" type="submit" expand="block" fill="outline" color="tertiary"
+                [routerLink]="['/nueva-clave']" routerLinkActive="router-link-active">
+                Enviar correo
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <p>Ó</p>
+            <p class="p" [routerLink]="['/inicio-registro']">Crear nueva cuenta</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-footer class="ion-text-center ion-no-border footer-card">
+              <p class="p3" [routerLink]="['/inicio-sesion']">Volver a inicio de sesion</p>
+            </ion-footer>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    <ion-img class="img" src="../../../assets/img/logo-blanco.png"></ion-img>
+  </ion-content>
+</ion-app>

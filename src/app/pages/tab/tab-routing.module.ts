@@ -14,11 +14,19 @@ const routes: Routes = [
     children: [
       {
         path: 'publicaciones',
-        loadChildren: './../publicaciones/publicaciones.module#PublicacionesPageModule'
+        loadChildren: () => import('../publicaciones/publicaciones.module').then(m => m.PublicacionesPageModule)
       },
       {
         path: 'perfil-usuario',
-        loadChildren: './../perfil-d/perfil-d.module#PerfilDPageModule'
+        loadChildren: () => import('../perfil-d/perfil-d.module').then(m => m.PerfilDPageModule)
+      },
+      {
+        path: 'chats',
+        loadChildren: () => import('../chats/chats.module').then(m => m.ChatsPageModule)
+      },
+      {
+        path: 'notificaciones',
+        loadChildren: () => import('../notificaciones/notificaciones.module').then(m => m.NotificacionesPageModule)
       }
     ]
   }

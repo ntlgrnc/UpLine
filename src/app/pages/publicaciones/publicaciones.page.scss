@@ -1,11 +1,39 @@
-.contenido {
-    overflow-y: scroll;
-}
-
 .img_avatar_publi{
-    border: solid 1px black;
+    width: 15%;
+    border-radius: 50%;
+    border: 3px solid #512DA8;
 }
 
-.boton_publi{
-    display:flex;
+.logo-menu-card{
+    color: #512DA8;
+    font-size: 25px;
+}
+
+h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    color: gray;
+    font-size: 12px;
+}
+
+.des-foto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 7px;
+}
+
+.reacciones{
+    color: #512DA8;
+    font-size: 28px;
+    margin-right: 25px;
+}
+
+span{
+    font-weight: bold;
 }
