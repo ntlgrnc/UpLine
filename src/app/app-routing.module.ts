@@ -53,6 +53,11 @@ const routes: Routes = [
     path: 'notificaciones',
     loadChildren: () => import('./pages/notificaciones/notificaciones.module').then(m => m.NotificacionesPageModule)
   },
+  {
+    path: 'poprese',
+    loadChildren: () => import('./pages/poprese/poprese.module').then( m => m.PopresePageModule)
+  },
+
 
 
 ];

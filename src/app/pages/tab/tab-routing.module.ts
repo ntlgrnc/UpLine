@@ -27,6 +27,10 @@ const routes: Routes = [
       {
         path: 'notificaciones',
         loadChildren: () => import('../notificaciones/notificaciones.module').then(m => m.NotificacionesPageModule)
+      },
+      {
+        path: 'agregar',
+        loadChildren: () => import('../add-publicacion/add-publicacion.module').then(m => m.AddPublicacionPageModule)
       }
     ]
   }

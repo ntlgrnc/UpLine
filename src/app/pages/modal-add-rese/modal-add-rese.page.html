@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center titulo">{{ titulo }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form class="ion-margin">
+
+    <textarea name="contenido" id="contenido" class="contenido" rows="15"
+      placeholder="Escribe la reseña aquí"></textarea>
+
+    <ion-button (click)="SalirConArgumentos()" expand="block" class="boton" color="tertiary" type="submit">
+      Enviar reseña
+    </ion-button>
+    <ion-button (click)="SalirSinArgumentos()" expand="block" class="boton" color="tertiary" fill="outline">
+      Salir
+    </ion-button>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div *ngIf="registro">
+            Reseña completada
+          </div>
+          <div *ngIf="registro == false">
+            No pudiste realizar la reseña
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar class="ion-text-center">
+      <ion-title>
+        <img src="../../../assets/img/logo-azul.png" class="img-footer">
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

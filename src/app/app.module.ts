@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from './services/usuario.service';
 
+import { PopresePageModule } from './pages/poprese/poprese.module';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +23,8 @@ import { UsuarioService } from './services/usuario.service';
     IonicModule.forRoot(), 
     AppRoutingModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    PopresePageModule
   ],
   providers: [
     StatusBar,
