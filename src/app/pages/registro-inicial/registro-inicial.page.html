@@ -41,6 +41,23 @@
           </ion-col>
         </ion-row>
 
+        <ion-row *ngIf="registro">
+          <ion-col>
+            <div class="alerta">
+              <ion-grid class="ion-no-padding">
+                <ion-row>
+                  <ion-col size="2">
+                    <ion-icon name="alert-circle" class="alerta-icono"></ion-icon>
+                  </ion-col>
+                  <ion-col size="10">
+                    No se pudo realizar el registro porque este correo ya está vinculado a una cuenta.
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-col>
+        </ion-row>
+
         <ion-row>
           <ion-col>
             <ion-button class="boton btn-google" expand="block" fill="outline" color="tertiary" 
@@ -51,31 +68,18 @@
 
         <ion-row>
           <ion-col>
-            <ion-button class="boton" type="submit" expand="block" color="tertiary" 
-            [routerLink]="['/fin-registro']" routerLinkActive="router-link-active">
+            <ion-button class="boton" type="submit" expand="block" color="tertiary" routerLinkActive="router-link-active">
             Continuar
           </ion-button>
           </ion-col>
         </ion-row>
 
-        <ion-row>
-          <ion-col size="12">
-            <div *ngIf="registro">
-              Registro completado
-            </div>
-            <div *ngIf="registro == false">
-              No pudiste registrarte
-            </div>
-          </ion-col>
-        </ion-row>
-
-
-        <ion-row *ngFor="let usuario of usuarios">
+        <!-- <ion-row *ngFor="let usuario of usuarios">
           <ion-col>
             <p>correo: {{ usuario.correo }}</p>
             <p>clave: {{ usuario.clave }}</p>
           </ion-col>
-        </ion-row>
+        </ion-row> -->
 
       </ion-grid>
     </form>

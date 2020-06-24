@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/app/models/usuario-model';
@@ -18,9 +18,9 @@ export class RegistroInicialPage implements OnInit {
     correo: "",
     clave: ""
   }
-  registro: boolean;
+  registro = false;
 
-  constructor(private usuarioService: UsuarioService, private http:HttpClient) {
+  constructor(private usuarioService: UsuarioService, private http:HttpClient, private route:Router) {
 
     
     // this.usuarioService.getUsuario().subscribe((data: Usuario[])=>{
@@ -39,17 +39,13 @@ export class RegistroInicialPage implements OnInit {
 
   guardarUsuario(user) {
 
-    console.log(user.value);
-
     this.usuarioService.guardarUs(user.value).subscribe(data => {
-      alert('se registro');
       this.idUsuario = data;
       localStorage.setItem('idUsuario',String(this.idUsuario));
-      this.registro = true;
+      this.route.navigate(['carga1']);
     }, (error)=>{
       console.log(error);
-      alert('No se pudo guardar');
-      this.registro = false;
+      this.registro = true;
     });
 
  }

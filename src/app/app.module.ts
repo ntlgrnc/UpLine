@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
@@ -21,7 +21,8 @@ import { UsuarioService } from './services/usuario.service';
     IonicModule.forRoot(), 
     AppRoutingModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,

@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'inicio-sesion',
+    redirectTo: 'fin-registro',
     pathMatch: 'full'
   },
   {
@@ -53,6 +53,15 @@ const routes: Routes = [
     path: 'notificaciones',
     loadChildren: () => import('./pages/notificaciones/notificaciones.module').then(m => m.NotificacionesPageModule)
   },
+  {
+    path: 'carga1',
+    loadChildren: () => import('./pages/carga1/carga1.module').then( m => m.Carga1PageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+
 
 
 ];

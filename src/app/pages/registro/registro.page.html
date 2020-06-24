@@ -23,14 +23,19 @@
 
     </ion-toolbar>
 
-    <form action="" class="formulario">
+    <form #Datos="ngForm" (ngSubmit)="guardarDatosU(Datos)" class="formulario" novalidate>
       <ion-grid>
         <ion-row>
           <ion-col>
             <ion-item>
               <ion-label class="label" position="stacked">Nombres</ion-label>
-              <ion-input class="input" required type="text"></ion-input>
+              <ion-input class="input" name="nombres" #nombres="ngModel" [(ngModel)]="datosUs.nombres" required type="text"></ion-input>
             </ion-item>
+            <div *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)">
+            <div *ngIf="nombres.errors.required" class="validacion">
+              Debes llenar este campo
+            </div>
+          </div>
           </ion-col>
         </ion-row>
 
@@ -38,8 +43,13 @@
           <ion-col>
             <ion-item>
               <ion-label class="label" position="stacked">Apellidos</ion-label>
-              <ion-input class="input" required type="text"></ion-input>
+              <ion-input class="input" name="apellidos" #apellidos="ngModel" [(ngModel)]="datosUs.apellidos" required type="text"></ion-input>
             </ion-item>
+            <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+              <div *ngIf="apellidos.errors.required" class="validacion">
+                Debes llenar este campo
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
@@ -47,8 +57,13 @@
           <ion-col>
             <ion-item>
               <ion-label class="label" position="stacked">Usuario</ion-label>
-              <ion-input class="input" required type="text"></ion-input>
+              <ion-input class="input" name="usuario" #usuario="ngModel" [(ngModel)]="datosUs.usuario" required type="text"></ion-input>
             </ion-item>
+            <div *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)">
+              <div *ngIf="usuario.errors.required" class="validacion">
+                Debes llenar este campo
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
@@ -56,16 +71,21 @@
           <ion-col>
             <ion-item>
               <ion-label class="label" position="stacked">Fecha de nacimiento</ion-label>
-              <ion-datetime class="datetime" displayFormat="MMM DD YYYY" max="2020" value="May 26 2020"
-                [monthShortNames]="meses"></ion-datetime>
+              <ion-datetime class="datetime" cancelText="Cancelar" doneText="Listo"
+                [monthShortNames]="meses" name="fechaNacimiento" [ngModel]="fechaNacimiento" required (ionChange)="cambioFecha($event)"></ion-datetime>
             </ion-item>
+            <div *ngIf="fechaNacimiento.invalid && (fechaNacimiento.dirty || fechaNacimiento.touched)">
+              <div *ngIf="fechaNacimiento.errors.required" class="validacion">
+                Debes seleccionar una fecha
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
 
           <ion-row>
             <ion-list>
-              <ion-radio-group name="sexo">
+              <ion-radio-group name="sexo" #sexo="ngModel" [(ngModel)]="datosUs.sexo" required>
                 <ion-list-header>
                   <ion-label class="label" position="stacked">Sexo</ion-label>
                 </ion-list-header>
@@ -82,12 +102,16 @@
                 </ion-row>
               </ion-radio-group>
             </ion-list>
+            <div *ngIf="sexo.invalid && (sexo.dirty || sexo.touched)">
+              <div *ngIf="sexo.errors.required" class="validacion">
+                Debes llenar este campo
+              </div>
+            </div>
           </ion-row>
 
           <ion-row>
             <ion-col>
               <ion-item class="sin-borde" lines="none">
-                <ion-checkbox color="tertiary" slot="start"></ion-checkbox>
                 <ion-text class="label-terminos">
                   Al hacer click aceptas que estás de acuerdo con los términos de
                   política y privacidad de Upline.
@@ -98,7 +122,7 @@
 
         <ion-row>
           <ion-col>
-            <ion-button class="boton" expand="block" color="tertiary" [routerLink]="['/publicaciones']">Finalizar registro</ion-button>
+            <ion-button class="boton" type="submit" expand="block" color="tertiary">Finalizar registro</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
