@@ -23,6 +23,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('usuarios', 'UsuarioController@index');
 Route::post('registroini', 'UsuarioController@store');
 
+Route::post('validarcorreo', 'UsuarioController@validarCorreo');
+
+//Rutas para la tabla datos de usuario
+Route::post('registro','DatosUController@guardarDatosU');
+
 // Rutas para la tabla publicación
 
 Route::post('addpublicacion', 'PublicacionController@guardarPubli');
+
+
+

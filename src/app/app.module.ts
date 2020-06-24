@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from './services/usuario.service';
 
 import { PopresePageModule } from './pages/poprese/poprese.module';
@@ -24,7 +24,8 @@ import { PopresePageModule } from './pages/poprese/poprese.module';
     AppRoutingModule, 
     HttpClientModule,
     FormsModule,
-    PopresePageModule
+    PopresePageModule,
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,

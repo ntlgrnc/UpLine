@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'inicio-sesion',
+    redirectTo: 'fin-registro',
     pathMatch: 'full'
   },
   {
@@ -56,6 +56,14 @@ const routes: Routes = [
   {
     path: 'poprese',
     loadChildren: () => import('./pages/poprese/poprese.module').then( m => m.PopresePageModule)
+  },
+  {
+    path: 'carga1',
+    loadChildren: () => import('./pages/carga1/carga1.module').then( m => m.Carga1PageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
 
 

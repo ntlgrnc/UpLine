@@ -9,6 +9,9 @@
 
 h6 {
     font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
 }
 
 p {
@@ -27,9 +30,25 @@ p {
 }
 
 .btn-google {
-    margin-top: 25%;
+    margin-top: 5%;
 }
 
 .btn-google .icono {
     margin-right: 5%;
+}
+
+.alerta {
+    background-color: #311B92;
+    border-radius: 13px;
+    padding: 10px;
+    position: relative;
+    margin-top: 10%;
+    font-family: 'Quicksand', sans-serif;
+    color: #FFF;
+}
+
+.alerta-icono {
+    position: relative;
+    margin-top: 10%;
+    font-size: 40px;
 }

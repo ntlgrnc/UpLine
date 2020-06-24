@@ -11,6 +11,17 @@ class DatosUController extends Controller
         $datosU = new DatosU();
 
         $datosU->idDatosU = 0;
-        $datosU->
+        $datosU->FK_idUsuario = $request['FK_idUsuario'];
+        $datosU->nombres = $request['nombres'];
+        $datosU->apellidos = $request['apellidos'];
+        $datosU->usuario = $request['usuario'];
+        $datosU->fechaNacimiento = $request['fechaNacimiento'];
+        $datosU->sexo = $request['sexo'];
+        $datosU->celular = 0;
+        $datosU->ubicacion = "";
+        $datosU->foto = "";
+        $datosU->estado = 'A';
+
+        $datosU->save();
     }
 }
