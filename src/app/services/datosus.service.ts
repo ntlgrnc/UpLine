@@ -10,6 +10,8 @@ export class DatosusService {
 
   url = "http://localhost:8000/api";
 
+  idUs = localStorage.getItem('idUsuario');
+
   constructor(private http: HttpClient) { }
 
   guardarDatosU(datosu: DatosUs){
@@ -17,9 +19,9 @@ export class DatosusService {
     return this.http.post(this.url + '/registro', datosu, {headers: headers});
   }
 
-  traerPerfil(datosp){
-    const headers = new HttpHeaders({'Content-Type':'application/json'});
-    return this.http.post(this.url + '/perfil', datosp, {headers: headers});
+  traerPerfil(){
+    const urlPerfil = `http://localhost:8000/api/perfil/${this.idUs}`;
+    return this.http.get(urlPerfil);
   }
 
 }

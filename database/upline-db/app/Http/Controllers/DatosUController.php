@@ -28,17 +28,17 @@ class DatosUController extends Controller
         $idUs = $datosU->FK_idUsuario;
         return $idUs;
 
-        Cache::put('idUsuario', $idUs, 30);
+        //Cache::put('idUsuario', $idUs, 30);
         //Session::put('idUsuario', $idUs);
     }
 
     
-    public function consultarUsuario() {
+    public function consultarUsuario($idUs) {
 
         //$idUsu = Session::get('idUsuario');
-        $idUsu = Cache::get('idUsuario');
+        //$idUsu = Cache::get('idUsuario');
         
-        $perfil = DB::table('datosu')->where('FK_idUsuario', $idUsu)->get();
+        $perfil = DB::table('datosu')->where('FK_idUsuario', $idUs)->get();
 
         return response()->json($perfil, 200);
     }

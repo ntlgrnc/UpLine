@@ -15,38 +15,44 @@ import { Router } from '@angular/router';
 export class PerfilDPage implements OnInit {
 
   perfil: DatosUs[];
+
   idUs = localStorage.getItem('idUsuario');
-  
+
   segmentSelect = 'publi';
 
-  constructor(
-    private menu: MenuController,
-    private popover:PopoverController,
-    private modal:ModalController,
-    private datosU: DatosusService
-    ) { }
+  constructor(private menu: MenuController, private popover: PopoverController,
+    private modal: ModalController, private datosusService: DatosusService) {
+
+    this.datosusService.traerPerfil().subscribe((data: DatosUs[]) => {
+      this.perfil = data;
+      console.log(this.perfil);
+    }, (error) => {
+      console.log(error);
+      alert('error');
+    });
+  }
 
   ngOnInit() {
-    this.datosPerfil;
-   }
+    //this.datosPerfil;
+  }
 
   openMenu() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
   }
 
-  async createPopover( evento ){
+  async createPopover(evento) {
 
-    const popover = await this.popover.create({ component:PopresePage, event: evento, mode: "ios", showBackdrop: false});
+    const popover = await this.popover.create({ component: PopresePage, event: evento, mode: "ios", showBackdrop: false });
     // this.popover.create({ component:PopresePage, showBackdrop:false }).then(( PopoverElement ) => {
     //   PopoverElement.present();
     // });
     await popover.present();
   }
 
-  async AbrirModalAdd(){
+  async AbrirModalAdd() {
 
-     const modal = await this.modal.create({
+    const modal = await this.modal.create({
       component: ModalAddResePage,
       componentProps: {
         titulo: 'Nueva reseña'
@@ -61,18 +67,6 @@ export class PerfilDPage implements OnInit {
 
   }
 
-  datosPerfil(id) {
 
-    this.datosU.traerPerfil(this.idUs).subscribe((data: DatosUs[]) => {
-      this.perfil = data;
-      console.log(data);
-      
-    }, (error)=>{
-      console.log(error);
-      
-    });
- }
-
-  
 
 }
