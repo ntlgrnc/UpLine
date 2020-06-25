@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\DatosU;
 
 class DatosUController extends Controller
@@ -23,5 +24,16 @@ class DatosUController extends Controller
         $datosU->estado = 'A';
 
         $datosU->save();
+    }
+
+    
+    public function verUsuario(Request $request) {
+        
+        $usuario = new DatosU();
+        $usuario->FK_idUsuario = $request['FK_idUsuario'];
+        
+        $perfil = DB::table('datosu')->where('FK_idUsuario', $usuario->FK_idUsuario)->get();
+
+        return $perfil;
     }
 }

@@ -20,13 +20,15 @@ export class RegistroPage implements OnInit {
     this.fechaNacimiento = moment(event.detail.value).format('YYYY-MM-DD');
   }
 
-  idUs = parseInt(localStorage.getItem('idUsuario'));
-
   datos: DatosUs[];
+    
+  idusuario:string;
 
+  nombr: string;
+  
   datosUs: DatosUs = {
     idDatosU: 0,
-    FK_idUsuario: this.idUs,
+    FK_idUsuario: '',
     nombres: "",
     apellidos: "",
     usuario: "",
@@ -34,8 +36,12 @@ export class RegistroPage implements OnInit {
     sexo: ""
   }
 
-  constructor(private datosuService: DatosusService, private http:HttpClient) {
   
+
+  constructor(private datosuService: DatosusService, private http:HttpClient) {
+
+    this.idusuario = localStorage.getItem('idUsuario');
+    this.nombr = 'mor';
    }
 
   ngOnInit() { }

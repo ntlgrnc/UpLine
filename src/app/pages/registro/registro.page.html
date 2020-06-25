@@ -23,13 +23,14 @@
 
     </ion-toolbar>
 
-    <form #Datos="ngForm" (ngSubmit)="guardarDatosU(Datos)" class="formulario" novalidate>
+    <form #Datos="ngForm" (ngSubmit)="guardarDatosU(Datos)" class="formulario">
       <ion-grid>
         <ion-row>
           <ion-col>
             <ion-item>
               <ion-label class="label" position="stacked">Nombres</ion-label>
-              <ion-input class="input" name="nombres" #nombres="ngModel" [(ngModel)]="datosUs.nombres" required type="text"></ion-input>
+              <input type="hidden" name="FK_idUsuario" #FK_idUsuario="ngModel" [(ngModel)]="idusuario">
+              <ion-input value="Nataliaaaa" class="input" name="nombres" #nombres="ngModel" [(ngModel)]="datosUs.nombres" required type="text"></ion-input>
             </ion-item>
             <div *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)">
             <div *ngIf="nombres.errors.required" class="validacion">
@@ -115,6 +116,7 @@
                 <ion-text class="label-terminos">
                   Al hacer click aceptas que estás de acuerdo con los términos de
                   política y privacidad de Upline.
+                  id del usuario: {{ idusuario }}
                 </ion-text>
               </ion-item>
             </ion-col>
