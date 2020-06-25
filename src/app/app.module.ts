@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from './services/usuario.service';
 
+import { PopresePageModule } from './pages/poprese/poprese.module';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,6 +24,7 @@ import { UsuarioService } from './services/usuario.service';
     AppRoutingModule, 
     HttpClientModule,
     FormsModule,
+    PopresePageModule,
     ReactiveFormsModule
   ],
   providers: [

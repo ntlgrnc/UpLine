@@ -54,6 +54,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/notificaciones/notificaciones.module').then(m => m.NotificacionesPageModule)
   },
   {
+    path: 'poprese',
+    loadChildren: () => import('./pages/poprese/poprese.module').then( m => m.PopresePageModule)
+  },
+  {
     path: 'carga1',
     loadChildren: () => import('./pages/carga1/carga1.module').then( m => m.Carga1PageModule)
   },

@@ -77,35 +77,78 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <div class="menu-bio">
-          <ion-col>
-            <a><ion-icon [routerLink]="['/inicio-sesion']" style="font-size: 26px;" class="icono" name="albums-outline"></ion-icon></a>
-            <a><ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon></a>
-          </ion-col>
-        </div>
+        <ion-col class="menu-bio">
+          <ion-segment color="tertiary" [(ngModel)]="segmentSelect">
+            <ion-segment-button value="publi">
+              <ion-icon style="font-size: 26px;" name="albums-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="rese">
+              <ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
       </ion-row>
     </ion-grid>
 
-    <ion-content>
-      
+    <div *ngIf="segmentSelect == 'publi'">
+
       <ion-card>
-        <ion-card-header>
-          <ion-card-title>
-            <ion-grid fixed class="ion-no-padding">
+        <ion-card-header class="ion-no-border">
+          <ion-item>
+            <img class="img_avatar_publi" src="../assets/img/luis.jpg">
+            <ion-label>
               <ion-row>
-                <ion-col size="2">
-                  <img src="../../../assets/img/natalia.jpg" class="img-publi">
+                <ion-col>
+                  <h3>Luis Pablo Góez</h3>
+                  <p class="p3">4/06/2020</p>
                 </ion-col>
-                <ion-col size="10">
-                  <p class="usuario-publi">@nataliag</p>
-                  <p class="fecha-publi">Hace 2 horas</p>
+                <ion-col class="ion-text-end">
+                  <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card"></ion-icon>
                 </ion-col>
               </ion-row>
-            </ion-grid>
-          </ion-card-title>
+            </ion-label>
+          </ion-item>
+        </ion-card-header>
+        <img src="../assets/img/natalia.jpg" />
+        <ion-card-content>
+          <p class="des-foto">Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the
+            capital of the Wisconsin Territory in 1836.</p>
+          <ion-row>
+            <ion-col>
+              <ion-icon name="chevron-up-circle-outline" class="reacciones"></ion-icon>
+              <ion-icon name="chatbox-outline" class="reacciones"></ion-icon>
+              <ion-icon name="paper-plane-outline" class="reacciones"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p class="p3">Le gusto a <span>58 personas </span></p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><span>Karen_Gallego:</span> Hermosa la natalia</h6>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><span>Cristian58:</span> Mera fea</h6>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><span>EderLara90:</span> La mejor programadora</h6>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Card Title</ion-card-title>
           <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
         </ion-card-header>
-      
+
         <ion-card-content>
           Keep close to Nature's heart... and break clear away, once in awhile,
           and climb a mountain or spend a week in the woods. Wash your spirit clean.
@@ -117,11 +160,54 @@
           <ion-card-title>Card Title</ion-card-title>
           <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
         </ion-card-header>
-      
+
         <ion-card-content>
           Keep close to Nature's heart... and break clear away, once in awhile,
           and climb a mountain or spend a week in the woods. Wash your spirit clean.
         </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngIf="segmentSelect == 'rese'">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <form>
+              <ion-button color="tertiary" expand="block" (click)="AbrirModalAdd()">
+                <ion-icon class="iconrese" name="add-circle-outline"></ion-icon>Agregar reseña
+              </ion-button>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card>
+        <ion-card-header class="ion-no-border">
+          <ion-item>
+            <img class="img_avatar_publi" src="../assets/img/luis.jpg">
+            <ion-label>
+              <ion-row>
+                <ion-col>
+                  <h3>Luis Pablo Góez</h3>
+                  <h6>@LuisGoez33</h6>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card" (click)="createPopover( $event )">
+                  </ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-label>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <p class="des-foto">Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named
+            the
+            capital of the Wisconsin Territory in 1836.</p>
+        </ion-card-content>
+        <ion-footer class="footercard">
+          <p class="p2">4/06/2020</p>
+        </ion-footer>
       </ion-card>
 
       <ion-card>
@@ -129,13 +215,15 @@
           <ion-card-title>Card Title</ion-card-title>
           <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
         </ion-card-header>
-      
+
         <ion-card-content>
           Keep close to Nature's heart... and break clear away, once in awhile,
           and climb a mountain or spend a week in the woods. Wash your spirit clean.
         </ion-card-content>
       </ion-card>
-    </ion-content>
+    </div>
+
+
   </ion-content>
 
 
