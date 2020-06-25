@@ -1,4 +1,11 @@
 <ion-app>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <img src="../assets/img/logo-upline-color.png" class="img-header ion-text-center"
+          slot="start"><h4>Publicaciones</h4>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-content>
     <ion-card>
       <ion-card-header class="ion-no-border">
@@ -11,7 +18,8 @@
                 <p>4/06/2020</p>
               </ion-col>
               <ion-col class="ion-text-end">
-                <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card"></ion-icon>
+                <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card" (click)="createPopover( $event )">
+                </ion-icon>
               </ion-col>
             </ion-row>
           </ion-label>
@@ -62,7 +70,8 @@
                 <p>4/06/2020</p>
               </ion-col>
               <ion-col class="ion-text-end">
-                <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card"></ion-icon>
+                <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card" (click)="createPopover( $event )">
+                </ion-icon>
               </ion-col>
             </ion-row>
           </ion-label>
@@ -113,7 +122,8 @@
                 <p>4/06/2020</p>
               </ion-col>
               <ion-col class="ion-text-end">
-                <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card"></ion-icon>
+                <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card" (click)="createPopover( $event )">
+                </ion-icon>
               </ion-col>
             </ion-row>
           </ion-label>

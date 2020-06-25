@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'fin-registro',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -64,7 +64,15 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },  {
+    path: 'poppubli',
+    loadChildren: () => import('./pages/poppubli/poppubli.module').then( m => m.PoppubliPageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+
 
 
 
