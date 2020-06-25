@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'fin-registro',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -65,6 +65,11 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  {
+    path: 'carga2',
+    loadChildren: () => import('./pages/carga2/carga2.module').then( m => m.Carga2PageModule)
+  },
+
 
 
 

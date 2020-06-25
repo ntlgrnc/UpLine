@@ -13,8 +13,8 @@
         <ion-row>
           <ion-col>
             <img src="../../../assets/img/logo-azul.png" class="img-header">
-            <h6>Bienvenid@ a nuestra red social</h6>
-            <p>¡Empecemos con el nuevo registro!</p>
+            <h6>¡Empecemos con el nuevo registro!</h6>
+            <p><ion-icon name="bulb-outline"></ion-icon> Primero unos datos</p>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -29,6 +29,11 @@
               <ion-label class="label" position="stacked">Correo electrónico</ion-label>
               <ion-input name="correo" #correo="ngModel" [(ngModel)]="usuario.correo" class="input" required type="email"></ion-input>
             </ion-item>
+            <div *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+              <div *ngIf="correo.errors.required" class="validacion">
+                Este campo es obligatorio
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
@@ -38,6 +43,11 @@
               <ion-label class="label" position="stacked">Clave</ion-label>
               <ion-input name="clave" #clave="ngModel" [(ngModel)]="usuario.clave" class="input" required type="password"></ion-input>
             </ion-item>
+            <div *ngIf="clave.touched && !clave.valid">
+              <div *ngIf="clave.errors.required" class="validacion">
+                Este campo es obligatorio
+              </div>
+            </div>
           </ion-col>
         </ion-row>
 
@@ -50,7 +60,7 @@
                     <ion-icon name="alert-circle" class="alerta-icono"></ion-icon>
                   </ion-col>
                   <ion-col size="10">
-                    No se pudo realizar el registro porque este correo ya está vinculado a una cuenta.
+                    No se pudo realizar el registro o este correo ya está vinculado a una cuenta.
                   </ion-col>
                 </ion-row>
               </ion-grid>
@@ -68,8 +78,9 @@
 
         <ion-row>
           <ion-col>
-            <ion-button class="boton" type="submit" expand="block" color="tertiary" routerLinkActive="router-link-active">
-            Continuar
+            <ion-button class="boton" type="submit" expand="block" color="tertiary" routerLinkActive="router-link-active" (click)="activarSpinner()">
+            <span *ngIf="texto">Continuar</span>
+            <ion-spinner *ngIf="spinner" name="crescent"></ion-spinner>
           </ion-button>
           </ion-col>
         </ion-row>

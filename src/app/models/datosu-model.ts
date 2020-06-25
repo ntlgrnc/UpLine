@@ -6,4 +6,7 @@ export interface DatosUs {
     usuario: string;
     fechaNacimiento: string;
     sexo: string;
+    celular: number;
+    ubicacion: string;
+    foto: string;
 }

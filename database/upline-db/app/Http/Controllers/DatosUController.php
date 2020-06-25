@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\DatosU;
+use Illuminate\Support\Facades\Session;
 
 class DatosUController extends Controller
 {
@@ -24,16 +25,21 @@ class DatosUController extends Controller
         $datosU->estado = 'A';
 
         $datosU->save();
+        $idUs = $datosU->FK_idUsuario;
+        return $idUs;
+
+        Cache::put('idUsuario', $idUs, 30);
+        //Session::put('idUsuario', $idUs);
     }
 
     
-    public function verUsuario(Request $request) {
-        
-        $usuario = new DatosU();
-        $usuario->FK_idUsuario = $request['FK_idUsuario'];
-        
-        $perfil = DB::table('datosu')->where('FK_idUsuario', $usuario->FK_idUsuario)->get();
+    public function consultarUsuario() {
 
-        return $perfil;
+        //$idUsu = Session::get('idUsuario');
+        $idUsu = Cache::get('idUsuario');
+        
+        $perfil = DB::table('datosu')->where('FK_idUsuario', $idUsu)->get();
+
+        return response()->json($perfil, 200);
     }
 }

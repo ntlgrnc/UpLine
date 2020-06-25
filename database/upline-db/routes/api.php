@@ -27,7 +27,7 @@ Route::post('validarcorreo', 'UsuarioController@validarCorreo');
 
 //Rutas para la tabla datos de usuario
 Route::post('registro','DatosUController@guardarDatosU');
-Route::post('perfil','DatosUController@verUsuario');
+Route::get('perfil','DatosUController@consultarUsuario');
 
 // Rutas para la tabla publicación
 

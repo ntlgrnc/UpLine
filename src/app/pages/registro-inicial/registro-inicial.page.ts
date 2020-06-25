@@ -36,6 +36,13 @@ export class RegistroInicialPage implements OnInit {
   }
 
   idUsuario = 0;
+  spinner = false;
+  texto = true;
+
+  activarSpinner() {
+    this.spinner = true;
+    this.texto = false;
+  }
 
   guardarUsuario(user) {
 
@@ -46,8 +53,9 @@ export class RegistroInicialPage implements OnInit {
     }, (error)=>{
       console.log(error);
       this.registro = true;
+      this.spinner = false;
+      this.texto = true;
     });
-
  }
 
 }

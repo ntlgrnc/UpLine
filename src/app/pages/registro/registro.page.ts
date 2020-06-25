@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DatosusService } from 'src/app/services/datosus.service';
 import { HttpClient } from '@angular/common/http';
 import { DatosUs } from 'src/app/models/datosu-model';
-import { FormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -33,12 +33,16 @@ export class RegistroPage implements OnInit {
     apellidos: "",
     usuario: "",
     fechaNacimiento: this.fechaNacimiento,
-    sexo: ""
+    sexo: "",
+    celular: 0,
+    ubicacion: '',
+    foto: ''
   }
 
-  
+  spinner = false;
+  texto = true;
 
-  constructor(private datosuService: DatosusService, private http:HttpClient) {
+  constructor(private datosuService: DatosusService, private http:HttpClient, private route:Router) {
 
     this.idusuario = localStorage.getItem('idUsuario');
     this.nombr = 'mor';
@@ -46,11 +50,17 @@ export class RegistroPage implements OnInit {
 
   ngOnInit() { }
 
+  activarSpinner() {
+    this.spinner=true;
+    this.texto = false;
+  }
+
   guardarDatosU(datosu) {
     this.datosuService.guardarDatosU(datosu.value).subscribe(data => {
-      alert('se registro');
+      this.route.navigate(['carga2']);
+      this.spinner = false;
     },(error)=>{
-      alert('No dio');
+      alert('Ocurrió un error');
     });
   }
 }
