@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController, ModalController, PopoverController } from '@ionic/angular';
 import { PopresePage } from '../poprese/poprese.page';
 import { ModalAddResePage } from '../modal-add-rese/modal-add-rese.page';
+import { DatosusService } from 'src/app/services/datosus.service';
+import { HttpClient } from '@angular/common/http';
+import { DatosUs } from 'src/app/models/datosu-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-d',
@@ -10,12 +14,21 @@ import { ModalAddResePage } from '../modal-add-rese/modal-add-rese.page';
 })
 export class PerfilDPage implements OnInit {
 
+  perfil: DatosUs[];
+  idUs = localStorage.getItem('idUsuario');
+  
   segmentSelect = 'publi';
 
-  constructor(private menu: MenuController, private popover:PopoverController, private modal:ModalController) { }
+  constructor(
+    private menu: MenuController,
+    private popover:PopoverController,
+    private modal:ModalController,
+    private datosU: DatosusService
+    ) { }
 
   ngOnInit() {
-  }
+    this.datosPerfil;
+   }
 
   openMenu() {
     this.menu.enable(true, 'first');
@@ -47,6 +60,18 @@ export class PerfilDPage implements OnInit {
     console.log('Retorno del modal', data);
 
   }
+
+  datosPerfil(id) {
+
+    this.datosU.traerPerfil(this.idUs).subscribe((data: DatosUs[]) => {
+      this.perfil = data;
+      console.log(data);
+      
+    }, (error)=>{
+      console.log(error);
+      
+    });
+ }
 
   
 
