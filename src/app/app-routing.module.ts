@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'perfil-usuario',
     pathMatch: 'full'
   },
   {

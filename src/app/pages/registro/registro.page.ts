@@ -23,8 +23,6 @@ export class RegistroPage implements OnInit {
   datos: DatosUs[];
     
   idusuario:string;
-
-  nombr: string;
   
   datosUs: DatosUs = {
     idDatosU: 0,
@@ -45,7 +43,6 @@ export class RegistroPage implements OnInit {
   constructor(private datosuService: DatosusService, private http:HttpClient, private route:Router) {
 
     this.idusuario = localStorage.getItem('idUsuario');
-    this.nombr = 'mor';
    }
 
   ngOnInit() { }
