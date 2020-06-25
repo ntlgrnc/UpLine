@@ -66,13 +66,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
+    path: 'poppubli',
+    loadChildren: () => import('./pages/poppubli/poppubli.module').then( m => m.PoppubliPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
     path: 'carga2',
     loadChildren: () => import('./pages/carga2/carga2.module').then( m => m.Carga2PageModule)
   },
-
-
-
-
 ];
 
 @NgModule({

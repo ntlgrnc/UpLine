@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    setTimeout(this.redireccionar,3000);
+  }
+
+  redireccionar() {
+    window.location.href='inicio-sesion';
   }
 
 }
