@@ -38,7 +38,10 @@ Route::post('addpublicacion', 'PublicacionController@guardarPubli');
 // Rutas para la tabla reseña
 
 Route::post('resena', 'ResenaController@guardarRese');
+Route::get('toResena/{idUsu}', 'ResenaController@mostrarTodasRese');
+Route::get('toPubli/{idUsu}', 'ResenaController@mostrarTodas');
 
 // Ruta para la tabla publicacion
 
 Route::post('publicaciones', 'PublicacionController@guardarPubli');
+Route::get('toPublicaciones', 'PublicacionController@mostrarTodas');

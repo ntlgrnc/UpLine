@@ -98,18 +98,24 @@
     </div>
     <div *ngIf="segmentSelect == 'publi'">
 
-      <ion-card>
+      <ion-card *ngFor="let resenas of resena2">
         <ion-card-header class="ion-no-border">
           <ion-item>
-            <img class="img_avatar_publi" src="../assets/img/luis.jpg">
+            <img class="img_avatar_publi" src="../assets/img/{{ resenas.foto }}">
             <ion-label>
               <ion-row>
                 <ion-col>
-                  <h3>Luis Pablo Góez</h3>
-                  <p class="p3">4/06/2020</p>
+                  <form id="idEliminar">
+                    <p>
+                      <input type="hidden" name="ubicacion" value="I">
+                    </p>
+                  </form>
+                  <h3>{{ resenas.nombres }} {{ resenas.apellidos }}</h3>
+                  <p>{{ resenas.fechaPublicacion }}</p>
                 </ion-col>
                 <ion-col class="ion-text-end">
-                  <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card"></ion-icon>
+                  <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card" (click)="createPopover( $event )">
+                  </ion-icon>
                 </ion-col>
               </ion-row>
             </ion-label>
@@ -117,8 +123,7 @@
         </ion-card-header>
         <img src="../assets/img/natalia.jpg" />
         <ion-card-content>
-          <p class="des-foto">Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the
-            capital of the Wisconsin Territory in 1836.</p>
+          <p class="des-foto">{{ resenas.contenido }}</p>
           <ion-row>
             <ion-col>
               <ion-icon name="chevron-up-circle-outline" class="reacciones"></ion-icon>
@@ -128,7 +133,7 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <p class="p3">Le gusto a <span>58 personas </span></p>
+              <p>Le gusto a <span>58 personas </span></p>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -148,30 +153,6 @@
           </ion-row>
         </ion-card-content>
       </ion-card>
-
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
-      </ion-card>
     </div>
 
     <div *ngIf="segmentSelect == 'rese'">
@@ -188,15 +169,15 @@
         </ion-row>
       </ion-grid>
 
-      <ion-card>
+      <ion-card *ngFor="let resenas of resena">
         <ion-card-header class="ion-no-border">
           <ion-item>
-            <img class="img_avatar_publi" src="../assets/img/luis.jpg">
+            <img class="img_avatar_publi" src="../assets/img/{{ resenas.foto }}">
             <ion-label>
               <ion-row>
                 <ion-col>
-                  <h3>Luis Pablo Góez</h3>
-                  <h6>@LuisGoez33</h6>
+                  <h3>{{ resenas.nombres }} {{ resenas.apellidos }}</h3>
+                  <h6>@{{ resenas.usuario }}</h6>
                 </ion-col>
                 <ion-col class="ion-text-end">
                   <ion-icon name="ellipsis-vertical-outline" class="logo-menu-card" (click)="createPopover( $event )">
@@ -207,25 +188,11 @@
           </ion-item>
         </ion-card-header>
         <ion-card-content>
-          <p class="des-foto">Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named
-            the
-            capital of the Wisconsin Territory in 1836.</p>
+          <p class="des-foto">{{ resenas.msjResena }}</p>
         </ion-card-content>
         <ion-footer class="footercard">
-          <p class="p2">4/06/2020</p>
+          <p class="p2">{{ resenas.fecha }}</p>
         </ion-footer>
-      </ion-card>
-
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
       </ion-card>
     </div>
   </ion-content>

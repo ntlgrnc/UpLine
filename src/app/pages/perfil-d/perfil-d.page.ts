@@ -6,6 +6,10 @@ import { DatosusService } from 'src/app/services/datosus.service';
 import { HttpClient } from '@angular/common/http';
 import { DatosUs } from 'src/app/models/datosu-model';
 import { Router } from '@angular/router';
+import { ResenasService } from 'src/app/services/resenas.service';
+import { Resena } from 'src/app/models/resena-model';
+import { PublicacionService } from 'src/app/services/publicacion.service';
+import { Publicacion } from 'src/app/models/publicacion-model';
 
 @Component({
   selector: 'app-perfil-d',
@@ -16,15 +20,33 @@ export class PerfilDPage implements OnInit {
 
   perfil: DatosUs[];
 
+  resena: Resena[];
+
+  resena2: Resena[];
+
   idUs = localStorage.getItem('idUsuario');
 
   segmentSelect = 'publi';
 
   constructor(private menu: MenuController, private popover: PopoverController,
-    private modal: ModalController, private datosusService: DatosusService, private route:Router) {
+    private modal: ModalController, private datosusService: DatosusService , private resenasService: ResenasService, private route: Router) {
 
     this.datosusService.traerPerfil().subscribe((data: DatosUs[]) => {
       this.perfil = data;
+    }, (error) => {
+      console.log(error);
+      alert('error');
+    });
+
+    this.resenasService.traerReseñas().subscribe((data: Resena[]) => {
+      this.resena = data;
+    }, (error) => {
+      console.log(error);
+      alert('error');
+    });
+
+    this.resenasService.traerPublicaciones().subscribe((data: Resena[]) => {
+      this.resena2 = data;
     }, (error) => {
       console.log(error);
       alert('error');
@@ -68,7 +90,7 @@ export class PerfilDPage implements OnInit {
   cerrarSesion() {
     localStorage.clear();
     console.log(localStorage.getItem('idLogin'));
-    
+
     this.route.navigate(['inicio-sesion']);
   }
 

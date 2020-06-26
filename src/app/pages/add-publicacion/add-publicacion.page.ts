@@ -14,6 +14,8 @@ export class AddPublicacionPage implements OnInit {
 
   perfil: DatosUs[];
 
+  idusuario:string;
+
   constructor(private publicacionService: PublicacionService, private route:Router, private datosusService: DatosusService) {
 
     this.datosusService.traerPerfil().subscribe((data: DatosUs[]) => {
@@ -24,12 +26,16 @@ export class AddPublicacionPage implements OnInit {
       alert('error');
     });
 
+    this.idusuario = localStorage.getItem('idLogin');
+
    }
 
   ngOnInit() {
   }
 
   datosPubli: Publicacion[];
+
+  
 
   publicacion: Publicacion = {
     idPublicacion: 0,

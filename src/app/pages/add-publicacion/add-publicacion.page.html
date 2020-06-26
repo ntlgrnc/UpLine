@@ -9,7 +9,7 @@
   <ion-grid fixed class="ion-no-padding">
     <ion-row>
       <ion-col size="2">
-        <img src="../../../assets/img/natalia.jpg" class="img-publi">
+        <img src="../../../assets/img/{{ perfiles.foto }}" class="img-publi">
       </ion-col>
       <ion-col size="10">
         <p class="usuario-publi">{{ perfiles.nombres }} {{ perfiles.apellidos }}</p>
@@ -21,6 +21,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
+          <input type="hidden" name="FK_idUsuario" #FK_idUsuario="ngModel" [(ngModel)]="idusuario">
           <textarea rows="20" placeholder="Escribe el contenido aquí" name="contenido" #contenido="ngModel"
       [(ngModel)]="publicacion.contenido" class="textarea"></textarea>
         </ion-col>
