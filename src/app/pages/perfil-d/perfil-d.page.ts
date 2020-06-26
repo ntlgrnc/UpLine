@@ -24,7 +24,7 @@ export class PerfilDPage implements OnInit {
 
   resena2: Resena[];
 
-  idUs = localStorage.getItem('idUsuario');
+  idUs = localStorage.getItem('idLogin');
 
   segmentSelect = 'publi';
 

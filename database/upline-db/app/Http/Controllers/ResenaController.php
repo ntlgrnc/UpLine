@@ -16,7 +16,7 @@ class ResenaController extends Controller
         $resena = new Resena();
         $fecha = new \DateTime();
         $resena->idResenas = 0;
-        $resena->autor = 1;
+        $resena->autor = 2;
         $resena->msjResena = $request['msjResena'];
         $resena->estado = "A";
         $resena->fecha = $fecha->format('Y-m-d'); 

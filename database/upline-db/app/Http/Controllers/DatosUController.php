@@ -21,7 +21,7 @@ class DatosUController extends Controller
         $datosU->sexo = $request['sexo'];
         $datosU->celular = 0;
         $datosU->ubicacion = "";
-        $datosU->foto = "";
+        $datosU->foto = "foto.png";
         $datosU->estado = 'A';
 
         $datosU->save();

@@ -1,5 +1,7 @@
 {
   "name": "Upline",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

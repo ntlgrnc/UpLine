@@ -35,7 +35,7 @@ export class ModalAddResePage implements OnInit {
 
   resena: Resena = {
     idResenas: 0,
-    autor: 1,
+    autor: 2,
     msjResena: "",
     estado: "",
     fecha: "",
