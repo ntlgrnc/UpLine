@@ -12,18 +12,17 @@ class PublicacionController extends Controller
 
         //$idUs = \Session::get('idUsuario');
 
-        $u = new UsuarioController;
-        $idusuario = $u->index();
+        // $u = new UsuarioController;
+        // $idusuario = $u->index();
 
         $publicacion = new Publicacion();
+        $fecha = new \DateTime();
         $publicacion->idPublicacion = 0;
-        $publicacion->FK_idTipoPublicacion = $request['idTipoPublicacion'];
-        $publicacion->FK_idUsuario = $idusuario;
-        $publicacion->fechaPublicacion = ''; 
+        $publicacion->FK_idUsuario = 2;
+        $publicacion->fechaPublicacion = $fecha->format('Y-m-d'); 
         $publicacion->estadoPublicacion = "A";
+        $publicacion->contenido = $request['contenido'];
 
         $publicacion->save();
-
-        print_r($idusuario);
     }
 }

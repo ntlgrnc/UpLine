@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngFor="let perfiles of perfil">
 
   <ion-grid fixed class="ion-no-padding">
     <ion-row>
@@ -12,21 +12,32 @@
         <img src="../../../assets/img/natalia.jpg" class="img-publi">
       </ion-col>
       <ion-col size="10">
-        <p class="usuario-publi">Natalia Garnica</p>
+        <p class="usuario-publi">{{ perfiles.nombres }} {{ perfiles.apellidos }}</p>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <form action="">
-
-    <textarea name="contenido" id="contenido" class="contenido" 
-    rows="20" placeholder="Escribe el contenido aquí"></textarea>
-  
-    <ion-button type="submit" class="boton" color="tertiary">Publicar</ion-button>
-
-    <ion-button class="boton-a" color="tertiary" fill="outline">
-      <ion-icon slot="start" name="add-outline"></ion-icon> Añadir fotos
-    </ion-button>
+  <form #publi="ngForm" (ngSubmit)="guardarPublica(publi)" class="formulario">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <textarea rows="20" placeholder="Escribe el contenido aquí" name="contenido" #contenido="ngModel"
+      [(ngModel)]="publicacion.contenido" class="textarea"></textarea>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" class="boton" color="tertiary" (click)="activarSpinner()">
+            <ion-spinner name="crescent" *ngIf="spinner"></ion-spinner>
+            <span *ngIf="texto">Publicar</span>
+          </ion-button>
+      
+          <ion-button class="boton-a" color="tertiary" fill="outline">
+            <ion-icon slot="start" name="add-outline"></ion-icon> Añadir fotos
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
   </form>
 
   <ion-footer class="ion-no-border">

@@ -47,6 +47,8 @@ class UsuarioController extends Controller
         $usuario->save();
 
         $idUs = DB::table('usuario')->where('correo', $usuario->correo)->value('idUsuario');
+
+        session(['idUsuarii' == $idUs]);
     
         //\Session::push('idUsuario', $idUs);
         return $idUs;
