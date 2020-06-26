@@ -21,7 +21,7 @@ export class PerfilDPage implements OnInit {
   segmentSelect = 'publi';
 
   constructor(private menu: MenuController, private popover: PopoverController,
-    private modal: ModalController, private datosusService: DatosusService) {
+    private modal: ModalController, private datosusService: DatosusService, private route:Router) {
 
     this.datosusService.traerPerfil().subscribe((data: DatosUs[]) => {
       this.perfil = data;
@@ -63,6 +63,13 @@ export class PerfilDPage implements OnInit {
 
     console.log('Retorno del modal', data);
 
+  }
+
+  cerrarSesion() {
+    localStorage.clear();
+    console.log(localStorage.getItem('idLogin'));
+    
+    this.route.navigate(['inicio-sesion']);
   }
 
 

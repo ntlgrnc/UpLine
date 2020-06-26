@@ -27,6 +27,10 @@
           <ion-icon name="help-outline" slot="start" style="color: #512DA8;"></ion-icon>
           <ion-label class="menu-item">Ayuda</ion-label>
         </ion-item>
+        <ion-item>
+          <ion-icon name="power-outline" slot="start" style="color: #512DA8;"></ion-icon>
+          <ion-label class="menu-item" (click)="cerrarSesion()">Cerrar sesión</ion-label>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -48,7 +52,7 @@
       <ion-grid class="contenedor">
         <ion-row>
           <ion-col>
-            <img src="../../../assets/img/natalia.jpg" class="foto-perfil">
+            <img src="../../../assets/img/{{perfiles.foto}}" class="foto-perfil">
           </ion-col>
         </ion-row>
         <ion-row class="ion-margin">

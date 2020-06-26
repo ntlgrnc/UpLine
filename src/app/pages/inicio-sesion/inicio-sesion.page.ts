@@ -22,13 +22,23 @@ export class InicioSesionPage implements OnInit {
   }
 
   resultado = '';
+  alerta = false;
+  spinner = false;
+  texto = true;
+
+  activarSpinner(){
+    this.spinner = true;
+    this.texto = false;
+  }
 
   inicioSesion(login) {
     this.usuarioService.inicioSesion(login.value).subscribe(data => {
       this.resultado = data;
       console.log(data);
       if(this.resultado == 'error'){
-        alert('Usuario no existe');
+        this.alerta = true;
+        this.spinner = false;
+        this.texto = true;
       } else {
         localStorage.setItem('idLogin', String(this.resultado));
         this.route.navigate(['tab']);
