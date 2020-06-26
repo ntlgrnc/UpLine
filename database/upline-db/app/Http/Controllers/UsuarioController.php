@@ -52,6 +52,27 @@ class UsuarioController extends Controller
         return $idUs;
     }
 
+    public function login(Request $request){
+
+        $usuario = new Usuario();
+        $usuario->correo = $request['correo'];
+        $usuario->clave = $request['clave'];
+
+        try {
+
+            $consulta = DB::table('usuario')->where('correo', $usuario->correo)->where('clave', $usuario->clave)->value('idUsuario');
+            if($consulta == ""){
+                return response()->json('error',200);
+            } else {
+                return response()->json($consulta,200);
+            }
+        
+        }catch(Exception $e) {
+            $error = ['error' =>'No dio'];
+            return response()->json($error,400);
+        }
+    }
+
     /**
      * Display the specified resource.
      *

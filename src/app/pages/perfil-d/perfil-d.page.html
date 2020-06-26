@@ -31,66 +31,67 @@
     </ion-content>
   </ion-menu>
 
-  <ion-content class="ion-page" id="main-content" *ngFor="let perfiles of perfil">
-    <ion-header class="ion-no-border" slot="fixed">
-      <ion-toolbar class="header">
-        <ion-title class="usuario">@{{perfiles.usuario}} </ion-title>
-        <span class="tipo-us">Desarrollador</span>
-        <ion-buttons slot="end">
-          <ion-menu-button>
-            <ion-icon name="settings-outline" style="color: #512DA8;"></ion-icon>
-          </ion-menu-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
+  <ion-content class="ion-page" id="main-content">
+    <div *ngFor="let perfiles of perfil">
+      <ion-header class="ion-no-border" slot="fixed">
+        <ion-toolbar class="header">
+          <ion-title class="usuario">@{{perfiles.usuario}} </ion-title>
+          <span class="tipo-us">Desarrollador</span>
+          <ion-buttons slot="end">
+            <ion-menu-button>
+              <ion-icon name="settings-outline" style="color: #512DA8;"></ion-icon>
+            </ion-menu-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
 
-    <ion-grid class="contenedor">
-      <ion-row>
-        <ion-col>
-          <img src="../../../assets/img/natalia.jpg" class="foto-perfil">
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-margin">
-        <ion-col size="4">
-          <p class="menu-info">Publicaciones</p>
-          <span class="menu-num">5</span>
-        </ion-col>
-        <ion-col size="4">
-          <p class="menu-info">Seguidores</p>
-          <span class="menu-num">127</span>
-        </ion-col>
-        <ion-col size="4">
-          <p class="menu-info">Seguidos</p>
-          <span class="menu-num">177</span>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-margin-horizontal">
-        <ion-col class="nombre">{{ perfiles.nombres }} {{ perfiles.apellidos }}</ion-col>
-      </ion-row>
-      <ion-row class="ion-margin-horizontal">
-        <ion-col>
-          <p class="descripcion-bio">
-            Desarrolladora Front-End
-            <br>
-            Conocimiento de Python, Angular y PHP
-            usuario: {{ perfiles.usuario }} ese
-          </p>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="menu-bio">
-          <ion-segment color="tertiary" [(ngModel)]="segmentSelect">
-            <ion-segment-button value="publi">
-              <ion-icon style="font-size: 26px;" name="albums-outline"></ion-icon>
-            </ion-segment-button>
-            <ion-segment-button value="rese">
-              <ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon>
-            </ion-segment-button>
-          </ion-segment>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      <ion-grid class="contenedor">
+        <ion-row>
+          <ion-col>
+            <img src="../../../assets/img/natalia.jpg" class="foto-perfil">
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin">
+          <ion-col size="4">
+            <p class="menu-info">Publicaciones</p>
+            <span class="menu-num">5</span>
+          </ion-col>
+          <ion-col size="4">
+            <p class="menu-info">Seguidores</p>
+            <span class="menu-num">127</span>
+          </ion-col>
+          <ion-col size="4">
+            <p class="menu-info">Seguidos</p>
+            <span class="menu-num">177</span>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-horizontal">
+          <ion-col class="nombre">{{ perfiles.nombres }} {{ perfiles.apellidos }}</ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-horizontal">
+          <ion-col>
+            <p class="descripcion-bio">
+              Desarrolladora Front-End
+              <br>
+              Conocimiento de Python, Angular y PHP
+            </p>
+          </ion-col>
+        </ion-row>
 
+        <ion-row>
+          <ion-col class="menu-bio">
+            <ion-segment color="tertiary" [(ngModel)]="segmentSelect">
+              <ion-segment-button value="publi">
+                <ion-icon style="font-size: 26px;" name="albums-outline"></ion-icon>
+              </ion-segment-button>
+              <ion-segment-button value="rese">
+                <ion-icon style="font-size: 26px;" name="newspaper-outline"></ion-icon>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
     <div *ngIf="segmentSelect == 'publi'">
 
       <ion-card>
@@ -223,8 +224,6 @@
         </ion-card-content>
       </ion-card>
     </div>
-
-
   </ion-content>
 
 

@@ -24,5 +24,10 @@ export class UsuarioService {
       const headers = new HttpHeaders({'Content-Type':'application/json'});
       return this.http.post(this.url + '/registroini', usuario, {headers: headers});
    }
+
+   inicioSesion(login: Usuario): Observable<any> {
+      const headers = new HttpHeaders({'Content-Type':'application/json'});
+      return this.http.post(this.url + '/login', login, {headers: headers});
+   }
   
 }

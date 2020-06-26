@@ -25,7 +25,6 @@ export class PerfilDPage implements OnInit {
 
     this.datosusService.traerPerfil().subscribe((data: DatosUs[]) => {
       this.perfil = data;
-      console.log(this.perfil);
     }, (error) => {
       console.log(error);
       alert('error');
@@ -33,7 +32,6 @@ export class PerfilDPage implements OnInit {
   }
 
   ngOnInit() {
-    //this.datosPerfil;
   }
 
   openMenu() {

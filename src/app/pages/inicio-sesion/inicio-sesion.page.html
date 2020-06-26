@@ -1,6 +1,6 @@
 <ion-app>
   <ion-content>
-    <form class="ion-margin">
+    <form #login="ngForm" (ngSubmit)="inicioSesion(login)" class="ion-margin">
       <ion-grid class="ion-text-center">
         <ion-row>
           <ion-col>
@@ -21,7 +21,7 @@
             <ion-col>
               <ion-item class="item" color="tertiary">
                 <ion-label class="label" position="stacked">Correo electrónico</ion-label>
-                <ion-input name="correo" class="input" required type="email"></ion-input>
+                <ion-input name="correo" #correo="ngModel" [(ngModel)]="usuario.correo" class="input" required type="email"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -30,7 +30,7 @@
             <ion-col>
               <ion-item class="item" color="tertiary">
                 <ion-label class="label" position="stacked">Clave</ion-label>
-                <ion-input name="clave" class="input" required type="password"></ion-input>
+                <ion-input name="clave" #clave="ngModel" [(ngModel)]="usuario.clave" class="input" required type="password"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -45,8 +45,7 @@
 
         <ion-row>
           <ion-col>
-            <ion-button class="boton" type="submit" expand="block" fill="outline" color="tertiary"
-              [routerLink]="['/tab']" routerLinkActive="router-link-active">
+            <ion-button class="boton" type="submit" expand="block" fill="outline" color="tertiary" routerLinkActive="router-link-active">
               Iniciar sesion
             </ion-button>
           </ion-col>

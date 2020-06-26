@@ -14,7 +14,7 @@ export class Carga2Page implements OnInit {
   }
 
   redireccionar() {
-    window.location.href='tab';
+    window.location.href='inicio-sesion';
   }
 
 }

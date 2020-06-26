@@ -10,7 +10,7 @@ export class DatosusService {
 
   url = "http://localhost:8000/api";
 
-  idUs = localStorage.getItem('idUsuario');
+  idUs = localStorage.getItem('idLogin');
 
   constructor(private http: HttpClient) { }
 
